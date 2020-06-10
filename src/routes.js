@@ -1,11 +1,8 @@
 const express = require("express");
 const routes = express.Router();
-const LeadController = require("./controllers/LeadController");
-const NewsController = require("./controllers/NewsController");
+const angelController = require("./controllers/AngelController");
+
 //Main request
-routes.get("/", LeadController.index);
-//routes.post("/news", NewsController.create);
-//routes.get("/news", NewsController.index);
-//routes.post("/leads", LeadController.create);
+routes.get("/", angelController.index);
 
 module.exports = routes;
