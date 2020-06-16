@@ -22,6 +22,16 @@ const classicalPlanets = [
   "moon"
 ];
 
+const weeklyPlanets = [
+  "sun",
+  "moon",
+  "mars",
+  "mercury",
+  "jupiter",
+  "venus",
+  "saturn"
+];
+
 const angelicPosition = {
   Sun: "",
   Moon: "",
@@ -70,8 +80,8 @@ module.exports = {
           const currentTime = $('.current img').attr('class');
           planetaryTime.currentHour = currentTime;
           planetaryTime.currentYear = classicalPlanets[getYearIndex()];
+          planetaryTime.currentDay = weeklyPlanets[day];
 
-          planetaryTime.currentDay = Object.keys(angelicPosition)[day].toLowerCase();
           return res.json(planetaryTime)
         }
       });
