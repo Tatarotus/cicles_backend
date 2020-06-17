@@ -1,7 +1,5 @@
 const request = require("request")
 const cheerio = require("cheerio")
-const date = new Date();
-const year = date.getFullYear();
 
 let angelIndex = 0;
 
@@ -42,7 +40,7 @@ const angelicPosition = {
 }
 
 function getYearIndex() {
-  let splitedYear = String(year).split("");
+  let splitedYear = String(new Date().getFullYear()).split("");
   splitedYear = splitedYear.map(Number)
   const yearIndex = splitedYear.reduce((a,b) => a + b, 0);
   return yearIndex - 1;
