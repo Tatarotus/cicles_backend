@@ -2,7 +2,6 @@ const request = require("request")
 const cheerio = require("cheerio")
 const date = new Date();
 const year = date.getFullYear();
-const day = date.getDay();
 
 let angelIndex = 0;
 
@@ -80,7 +79,7 @@ module.exports = {
           const currentTime = $('.current img').attr('class');
           planetaryTime.currentHour = currentTime;
           planetaryTime.currentYear = classicalPlanets[getYearIndex()];
-          planetaryTime.currentDay = weeklyPlanets[day];
+          planetaryTime.currentDay = weeklyPlanets[new Date().getDay()];
 
           return res.json(planetaryTime)
         }
