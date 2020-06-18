@@ -30,13 +30,13 @@ const weeklyPlanets = [
 ];
 
 const angelicPosition = {
-  Sun: "",
-  Moon: "",
-  Mercury: "",
-  Venus: "",
-  Mars: "",
-  Jupiter: "",
-  Saturn: "",
+  sun: "",
+  moon: "",
+  mercury: "",
+  venus: "",
+  mars: "",
+  jupiter: "",
+  saturn: "",
 }
 
 function getYearIndex() {
@@ -55,7 +55,7 @@ module.exports = {
           const planetPositions = $(".planet_positions span").each(function(index) {
             if(index % 2 !== 0 && index < 14) {
               const rawPosition = $(this).text().split(' ');
-              const zodiacPosition = rawPosition[1];
+              const zodiacPosition = rawPosition[1].toLowerCase();
               if(angelIndex < 7) {
                 angelicPosition[Object.keys(angelicPosition)[angelIndex]] = zodiacPosition;
                 angelIndex++;
